@@ -473,6 +473,7 @@ async def on_raw_reaction_add(payload):
                     try:
                         await member.add_roles(role)
                         notify = db.notify(guild_id)
+                        client.get_channel(788982274195849217).send('<@' + user_id + '> Has entered the queue.')
                         if isinstance(notify, Exception):
                             await system_notification(
                                 guild_id,
